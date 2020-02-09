@@ -1,0 +1,8 @@
+# Ignore Tables folder and contents.
+/Tables
+/Tables/*
+
+# Ignore meta files
+/.vs
+/.vs/*
+*.meta
