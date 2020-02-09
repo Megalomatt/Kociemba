@@ -5,6 +5,9 @@ This is a C# port of the [Two-Phase-Algorithm Java package](http://kociemba.org/
 All credit for this solution goes to him.
 
 This port was created to allow the code to work with the Unity Game Engine.
+
+Using pre-built tables, can solve cubes in under 22 moves in under 0.01 seconds.
+
 I have made a couple of small modifications (to store the built tables and pass out some info) but, for the most part, all comments remain intact and this package can be used with the original documentation.
 
 An [alternative C# implementation](https://github.com/tremwil/TwoPhaseSolver) exists that accepts a move list, instead of a searchString, as an input by GitHub user Tremwill. 
