@@ -144,11 +144,7 @@ namespace Kociemba
          */
         public static string solution(string facelets, out string info, int maxDepth = 22, long timeOut = 6000, bool useSeparator = false )
         {
-            if (facelets == "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB")
-            {
-                info = "Already Solved";
-                return "";
-            }
+
             DateTime startTime = DateTime.Now;
             info = "";
       
@@ -284,6 +280,11 @@ namespace Kociemba
                     {
                         if (s == depthPhase1 || (ax[depthPhase1 - 1] != ax[depthPhase1] && ax[depthPhase1 - 1] != ax[depthPhase1] + 3))
                         {
+                            if (facelets == "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB")
+                            {
+                                info = "Already Solved";
+                                return "";
+                            }
                             return useSeparator ? solutionToString(s, depthPhase1) : solutionToString(s);
                         }
                     }

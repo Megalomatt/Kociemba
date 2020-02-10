@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Kociemba
@@ -62,7 +63,7 @@ namespace Kociemba
         public static string randomCube()
         {
             CubieCube cc = new CubieCube();
-            Random gen = new Random();
+            System.Random gen = new System.Random();
             cc.setFlip((short)gen.Next(CoordCube.N_FLIP));
             cc.setTwist((short)gen.Next(CoordCube.N_TWIST));
             do
@@ -80,17 +81,19 @@ namespace Kociemba
 
         public static void SerializeTable(string filename, short[,] array)
         {
-            EnsureFolder("Assets\\Kociemba\\Tables\\");
+            EnsureFolder("Assets\\Resources\\");
             BinaryFormatter bf = new BinaryFormatter();
-            Stream s = File.Open("Assets\\Kociemba\\Tables\\" + filename, FileMode.Create);
+            Stream s = File.Open("Assets\\Resources\\" + filename + ".bytes", FileMode.Create);
             bf.Serialize(s, array);
             s.Close();
         }
 
         public static short[,] DeserializeTable(string filename)
         {
-            EnsureFolder("Assets\\Kociemba\\Tables\\");
-            Stream s = File.Open("Assets\\Kociemba\\Tables\\" + filename, FileMode.Open);
+            
+            TextAsset asset = Resources.Load(filename) as TextAsset;
+            Stream s = new MemoryStream(asset.bytes);
+            //Stream s = File.Open("Assets\\Resources\\" + filename, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             short[,] array = (short[,])bf.Deserialize(s);
             s.Close();
@@ -99,17 +102,18 @@ namespace Kociemba
 
         public static void SerializeSbyteArray(string filename, sbyte[] array)
         {
-            EnsureFolder("Assets\\Kociemba\\Tables\\");
+            EnsureFolder("Assets\\Resources\\");
             BinaryFormatter bf = new BinaryFormatter();
-            Stream s = File.Open("Assets\\Kociemba\\Tables\\" + filename, FileMode.Create);
+            Stream s = File.Open("Assets\\Resources\\" + filename + ".bytes", FileMode.Create);
             bf.Serialize(s, array);
             s.Close();
         }
 
         public static sbyte[] DeserializeSbyteArray(string filename)
         {
-            EnsureFolder("Assets\\Kociemba\\Tables\\");
-            Stream s = File.Open("Assets\\Kociemba\\Tables\\" + filename, FileMode.Open);
+            TextAsset asset = Resources.Load(filename) as TextAsset;
+            Stream s = new MemoryStream(asset.bytes);
+            //Stream s = File.Open("Assets\\Resources\\" + filename, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             sbyte[] array = (sbyte[])bf.Deserialize(s);
             s.Close();
