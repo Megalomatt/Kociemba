@@ -1,4 +1,4 @@
-# C# Kociemba Two-Phase Solver
+# C# Kociemba Two-Phase Solver for Unity
 
 This is a C# port of the [Two-Phase-Algorithm Java package](http://kociemba.org/cube.htm) written by Herbert Kociemba.
 
