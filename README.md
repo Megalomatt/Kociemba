@@ -14,6 +14,12 @@ An [alternative C# implementation](https://github.com/tremwil/TwoPhaseSolver) ex
 
 # Using the package
 
+** Note: If using with Unity, switch to the Unity branch! This will allow tables to be used in WebGL **
+
+## Define the scope
+
+    using Kociemba;
+
 ## Preparing the search string
 
 Diagam of cube map from Kociemba's original documention:
