@@ -1,4 +1,4 @@
-# C# Kociemba Two-Phase Solver
+# C# Kociemba Two-Phase Solver for Unity
 
 This is a C# port of the [Two-Phase-Algorithm Java package](http://kociemba.org/cube.htm) written by Herbert Kociemba.
 
@@ -11,6 +11,12 @@ An [alternative C# implementation](https://github.com/tremwil/TwoPhaseSolver) ex
 
 # Using the package
 
+** Note: If using with Unity, switch to the Unity branch! This will allow tables to be used in WebGL **
+
+## Define the scope
+
+    using Kociemba;
+    
 ## Preparing the search string
 
 Diagam of cube map from Kociemba's original documention:
@@ -44,6 +50,8 @@ For example, a solved searchString would be:
 This searchString has had 90 degree clockwise rotation of the front face applied to it:
 
     string searchString= "UUUUUULLLURRURRURRFFFFFFFFFRRRDDDDDDLLDLLDLLDBBBBBBBBB";
+
+
 
 
 
