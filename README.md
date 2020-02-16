@@ -76,7 +76,7 @@ It requires an additional string to pass out information.
 If buildTables is set to true, it will generate the tables necessary for using the alternative Search class.
 
 The following file tree structure will be generated if it does not exist already:
-Assets/Kociemba/Tables/
+Assets/Resources/Tables/
 
 
     string info = "";
